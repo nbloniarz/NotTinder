@@ -1,0 +1,18 @@
+Drop table Student;
+
+Create Table Student(
+        ID INTEGER Primary Key,
+        FName Varchar2(25),
+        LName Varchar2(25),
+        Course Varchar2(25),
+        Gender Var
+        
+        
+  
+  
+        String name;
+String class;
+String gender;
+int gpa;
+String major;
+String bio;
