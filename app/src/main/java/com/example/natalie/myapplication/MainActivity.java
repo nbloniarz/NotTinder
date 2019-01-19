@@ -1,5 +1,6 @@
 package com.example.natalie.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,8 +9,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+
+    EditText username;// = (EditText)findViewById(R.id.userEdit);
+    EditText password;// = (EditText)findViewById(R.id.passEdit);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        username = (EditText)findViewById(R.id.userEdit);
+        password = (EditText)findViewById(R.id.passEdit);
+
     }
 
     @Override
@@ -48,5 +57,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void Login(View view) {
+        System.out.println("LOGIN FUNCTION CALLED");
+        if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin") ) {
+            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+        }
     }
 }
